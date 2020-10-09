@@ -1,0 +1,170 @@
+:root {
+  --primary-color: linear-gradient(#4c3fc2, #6a178b);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 1.2rem;
+}
+
+.hero {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)),
+    url(../img/herobackground.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+header {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 85px;
+  /* background: linear-gradient(to bottom, #000000c5, transparent); */
+}
+
+header .logo {
+  font-weight: 600;
+  color: #fff;
+  z-index: 100;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 2.2rem;
+  letter-spacing: 0.2rem;
+  line-height: 1;
+}
+
+header .logo > span {
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+}
+
+header .menu {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+  transition: transform 0.6s ease;
+}
+
+header .menu ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 50%;
+  width: 200vw;
+  height: 200vw;
+  flex: none;
+}
+
+header .menu ul li {
+  margin: 1rem;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  transition-delay: 0.3s;
+}
+
+header .menu ul li a {
+  display: inline-block;
+  padding: 0.4rem 0;
+  position: relative;
+}
+
+header .menu ul li a::before,
+header .menu ul li a::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--primary-color);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s;
+  box-shadow: 2px 1px 10px rgb(76, 51, 218), 1px 1px 10px rgb(144, 75, 201);
+}
+
+header .menu ul li a::after {
+  top: 0;
+  bottom: auto;
+  left: auto;
+  right: 0;
+  transform-origin: left;
+}
+header .menu ul li a:hover::before,
+header .menu ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: 0.5s transform;
+}
+header .menu ul li a:hover::after {
+  transform-origin: right;
+}
+
+.hamburger {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  color: #fff;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.fa-times {
+  display: none;
+}
+
+.open .fa-times {
+  display: block;
+}
+
+.open .fa-bars {
+  display: none;
+}
+
+.open .menu {
+  transform: scale(1);
+}
+
+header.open .menu ul li {
+  opacity: 1;
+}
+
+.open .logo {
+  color: #fff;
+}
+
+header.open {
+  background: transparent;
+}
