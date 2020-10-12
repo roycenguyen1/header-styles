@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  overflow: hidden;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+}
+
+header {
+  background: #8ddfffda;
+  transition: background 0.4s ease;
+}
+
+.title {
+  text-transform: capitalize;
+  font-size: 1.7rem;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: #184050;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.nav {
+  position: absolute;
+  top: 0;
+  right: -200%;
+  width: 75%;
+  height: 100vh;
+  background: #51ceffda;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-left: 2px solid white;
+  text-align: center;
+  transition: right 0.7s ease-in-out;
+}
+
+.nav::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #1c5268da;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.8s ease-in;
+}
+
+.nav span {
+  color: #366a7c;
+}
+
+.nav ul li {
+  margin: 0.5rem 0;
+  padding: 0.5rem 0;
+}
+
+.nav ul li a {
+  display: inline-block;
+  color: #184050;
+  font-weight: 500;
+  letter-spacing: 0.07rem;
+  transition: all 0.5s ease;
+}
+
+.nav ul li a:hover {
+  color: #fff;
+}
+
+.hamburger {
+  z-index: 1;
+  cursor: pointer;
+  font-size: 1.3rem;
+  color: #184050;
+}
+
+.fa-times {
+  display: none;
+}
+
+.open .nav {
+  right: 0;
+}
+
+.open .nav::before {
+  opacity: 1;
+}
+
+.open .fa-times {
+  display: block;
+  font-size: 1.4rem;
+}
+
+.open .fa-times:hover {
+  color: #fff;
+}
+
+.open .fa-bars {
+  display: none;
+}
+
+header.open {
+  background: transparent;
+}
+
+
+}
