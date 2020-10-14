@@ -1,0 +1,131 @@
+$title-font: "Satisfy", cursive;
+$main-font: "Roboto", sans-serif;
+$light-blue: #bffff4;
+$medium-blue: #43a595;
+$dark-color: #06202c;
+$gold-color: linear-gradient(
+  90deg,
+  rgba(190, 140, 30, 1) 0%,
+  rgba(231, 181, 67, 1) 61%,
+  rgba(255, 230, 139, 1) 100%
+);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: $main-font;
+}
+
+main {
+  background: url("../img/background.jpg");
+  width: 100%;
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+  color: #fff;
+
+  .logo {
+    font-family: $title-font;
+    font-size: 3.5rem;
+    z-index: 1;
+  }
+
+  .hamburger {
+    font-size: 1.7rem;
+    cursor: pointer;
+    z-index: 1;
+
+    .fa-times {
+      display: none;
+    }
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    ul {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+
+      li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        transform: translateX(100%);
+        transition: transform 0.5s;
+
+        a {
+          text-transform: uppercase;
+          letter-spacing: 0.15rem;
+          color: $dark-color;
+        }
+
+        &:nth-child(1) {
+          background: $light-blue;
+          transition-delay: 0.1s;
+        }
+        &:nth-child(2) {
+          background: $medium-blue;
+          transition-delay: 0.2s;
+        }
+        &:nth-child(3) {
+          background: $gold-color;
+          transition-delay: 0.3s;
+        }
+        &:nth-child(4) {
+          background: $dark-color;
+          transition-delay: 0.4s;
+          a {
+            color: $light-blue;
+          }
+        }
+      }
+    }
+  }
+
+  &.open {
+    .fa-times {
+      display: block;
+      font-size: 2rem;
+    }
+
+    .fa-bars {
+      display: none;
+    }
+
+    .nav ul li {
+      transform: translateX(0);
+    }
+    .logo,
+    .hamburger {
+      color: $medium-blue;
+    }
+  }
+}
