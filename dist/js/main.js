@@ -12,6 +12,7 @@ $(".nav-link").click(function () {
 });
 
 $(".has-sub").click(function () {
+  // $(".submenu").toggleClass("active");
   $(".submenu").slideToggle("fast");
   $(".submenu-item").click(function () {
     if ($(".nav-link").hasClass("show")) {
