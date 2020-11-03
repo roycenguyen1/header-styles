@@ -1,22 +1,26 @@
-$(".has-sub").click(function () {
-  $(".submenu").slideToggle("fast");
-});
-
 $(".nav-link").click(function () {
-  $(this).toggleClass("show");
+  if ($(this).parent().is(".has-sub")) {
+    $(this).toggleClass("show");
+  } else {
+    $(this).addClass("show");
+  }
+
   $(this).parent().siblings().children().removeClass("show");
   if ($(this).parent().siblings().is(".has-sub")) {
     $(".submenu").slideUp("fast");
   }
 });
 
-$(".nav-item").mouseover(function () {
-  $(this).css({ background: "#444" });
-  $(this).mouseout(function () {
-    $(this).css({ background: "none" });
+$(".has-sub").click(function () {
+  $(".submenu").slideToggle("fast");
+  $(".submenu-item").click(function () {
+    if ($(".nav-link").hasClass("show")) {
+      $(".nav-link").removeClass("show");
+    }
   });
 });
 
-$(".submenu-item").hover(function () {
-  $(this).toggleClass("onhover");
+$(".hamburger").click(function () {
+  $(".header").toggleClass("active");
+  $(this).toggleClass("active");
 });
