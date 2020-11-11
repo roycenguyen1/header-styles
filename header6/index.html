@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <!--Jquery-->
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+  <!--Fonts-->
+  <link
+    href='https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'
+    rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css2?family=Satisfy&display=swap' rel='stylesheet'>
+  <!--Icons-->
+  <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://kit.fontawesome.com/d3a0fcb87e.js" crossorigin="anonymous"></script>
+  <!--Scroll Reveal-->
+  <script src='https://unpkg.com/scrollreveal'></script>
+  <title>Header with Submenu</title>
+  <link rel='stylesheet' href='style.css'>
+</head>
+
+<body>
+  <a id='top'></a>
+  <!--Scroll to Top button-->
+  <!-- <a href='#top' id='myBtn' title='Go to top'><i class='fas fa-chevron-circle-up fa-2x'></i></a> -->
+  <header class="header">
+    <div class="logo">Header with Submenu</div>
+    <div class="nav">
+      <ul>
+        <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+        <li class="nav-item has-sub">
+          <a href="#" class="nav-link">Menu<i class="fas fa-caret-down"></i></a>
+
+          <ul class="submenu">
+            <li class="submenu-item">
+              <a href="#" class="submenu-link">Link1</a>
+            </li>
+            <li class="submenu-item">
+              <a href="#" class="submenu-link">Link2</a>
+            </li>
+            <li class="submenu-item">
+              <a href="#" class="submenu-link">Link3 Lorem ipsum dolor sit.</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+    <div class="social">
+      <ul>
+        <li><i class="fab fa-facebook-square"></i></li>
+        <li><i class="fab fa-twitter"></i></li>
+        <li><i class="fab fa-youtube"></i></li>
+      </ul>
+    </div>
+
+
+  </header>
+  <div class="hamburger">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src='js/main.js'></script>
+</body>
+
+</html>
